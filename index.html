@@ -5,9 +5,50 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>
+        Document
+    </title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page">
+<div class="wrapper">
+    <div class="image-wrapper">
+        <img src="desert.jpg" class="image">
+    </div>
+
+    <div class="registration">
+        <h1>Регистрация</h1>
+        <form class="registration-form">
+            <fieldset>
+                <label for="first-name" class="label">Имя*</label>
+                <input id="first-name" name="first-name" type="text" required>
+
+                <label for="last-name" class="label">Фамилия*</label>
+                <input id="last-name" name="last-name" type="text" required>
+            </fieldset>
+            <fieldset>
+                <legend></legend>
+                <label for="email" class="label">Email*</label>
+                <input id="email" name="email" type="email" required>
+            </fieldset>
+            <fieldset>
+                <legend></legend>
+                <label for="password" class="label">Пароль*</label>
+                <input id="password" name="password" type="password" required>
+
+                <label for="password-confirm" class="label">Подтверждение пароля*</label>
+                <input id="password-confirm" name="password-confirm" type="password" required>
+            </fieldset>
+            <fieldset>
+                <legend></legend>
+                <label for="birth-day" class="label">День рождения</label>
+                <input id="birth-day" name="birth-day" type="date">
+            </fieldset>
+            <input id="form-button" type="button">Зарегистрироваться
+        </form>
+    </div>
+
+</div>
 
 </body>
 </html>
