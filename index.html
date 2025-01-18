@@ -9,7 +9,9 @@
         Document
     </title>
     <link rel="stylesheet" href="./fonts/fonts.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body class="page">
 <div class="wrapper">
@@ -20,7 +22,7 @@
     <div class="registration">
         <h1 class="heading">Создайте аккаунт</h1>
         <p class="parag">Уже есть аккаунт? <a class="link" href="">Войти</a></p>
-        <form class="registration-form">
+        <form class="registration-form" action="/submit" method="post">
             <fieldset class="firstf">
                 <label for="first-name" class="label visually-hidden">Имя</label>
                 <input id="first-name" name="first-name" type="text" placeholder="Имя*" class="input" required>
@@ -41,13 +43,27 @@
                 <label for="password-confirm" class="label visually-hidden">Подтверждение пароля</label>
                 <input id="password-confirm" name="password-confirm" type="password" placeholder="Подтверждение пароля*" class="input" required>
             </fieldset>
-            <fieldset>
-                <legend></legend>
-                <label for="birth-day" class="label visually-hidden">День рождения</label>
-                <input id="birth-day" name="birth-day" type="date" class="date-input" placeholder="День рождения">
-            </fieldset>
-            <input id="form-button" type="button">Зарегистрироваться
+            <div class="last">
+                <fieldset class="dr">
+                    <label for="birth-day" class="label visually-hidden">День рождения</label>
+                    <input id="birth-day" name="birth-day" type="date" class="date-input" placeholder="День рождения">
+                </fieldset>
+                <input id="form-button" type="submit" value="Зарегистрироваться" class="submit-input">
+            </div>
         </form>
+        <div class="divider">
+            <span>Или войти через</span>
+        </div>
+        <div class="buttons">
+            <button class="other-input">
+                <img src="google.svg" class="img">
+                Google
+            </button>
+            <button class="other-input">
+                <img src="icons8-ос-mac.svg" class="img">
+                Apple
+            </button>
+        </div>
     </div>
 
 </div>
