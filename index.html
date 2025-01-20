@@ -14,59 +14,67 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body class="page">
-<div class="wrapper">
-    <div class="image-wrapper">
-        <img src="desert.jpg" class="image" alt="">
+<div class="page__wrapper">
+    <div class="page__image-wrapper">
+        <img src="desert.jpg" class="page__image" alt="Пустыня">
     </div>
-
     <div class="registration">
-        <h1 class="heading">Создайте аккаунт</h1>
-        <p class="parag">Уже есть аккаунт? <a class="link" href="">Войти</a></p>
-        <form class="registration-form" action="/submit" method="post">
-            <fieldset class="firstf">
-                <label for="first-name" class="label visually-hidden">Имя</label>
-                <input id="first-name" name="first-name" type="text" placeholder="Имя*" class="input" required>
+        <h1 class="registration__title">Создайте аккаунт</h1>
+        <p class="registration__text">Уже есть аккаунт? <a class="registration__link" href="">Войти</a></p>
+        <form class="registration__form" action="/submit" method="post" name="registration" novalidate>
+            <fieldset class="registration__fieldset">
+                <label class="registration__field">
+                    <span class="registration__label visually-hidden">Имя</span>
+                    <input id="first-name" name="first-name" type="text" placeholder="Имя*" class="registration__input" required>
+                    <span class="form__input-error first-name-error"></span>
+                </label>
 
-                <label for="last-name" class="label visually-hidden">Фамилия</label>
-                <input id="last-name" name="last-name" type="text" placeholder="Фамилия*" class="input" required>
+                <label class="registration__field">
+                    <span class="registration__label visually-hidden">Фамилия</span>
+                    <input id="last-name" name="last-name" type="text" placeholder="Фамилия*" class="registration__input" required>
+                    <span class="form__input-error last-name-error"></span>
+                </label>
             </fieldset>
-            <fieldset>
-                <legend></legend>
-                <label for="email" class="label visually-hidden">Email</label>
-                <input id="email" name="email" type="email" placeholder="Email*" class="input" required>
-            </fieldset>
-            <fieldset>
-                <legend></legend>
-                <label for="password" class="label visually-hidden">Пароль</label>
-                <input id="password" name="password" type="password" placeholder="Пароль*" class="input" required>
-
-                <label for="password-confirm" class="label visually-hidden">Подтверждение пароля</label>
-                <input id="password-confirm" name="password-confirm" type="password" placeholder="Подтверждение пароля*" class="input" required>
-            </fieldset>
-            <div class="last">
-                <fieldset class="dr">
-                    <label for="birth-day" class="label visually-hidden">День рождения</label>
-                    <input id="birth-day" name="birth-day" type="date" class="date-input" placeholder="День рождения">
-                </fieldset>
-                <input id="form-button" type="submit" value="Зарегистрироваться" class="submit-input">
+            <label class="registration__field">
+                <span class="registration__label visually-hidden">Email</span>
+                <input id="email" name="email" type="email" placeholder="Email*" class="registration__input" required>
+                <span class="form__input-error email-error"></span>
+            </label>
+            <label class="registration__field">
+                <span class="registration__label visually-hidden">Пароль</span>
+                <input id="password" name="password" type="password" placeholder="Пароль*" class="registration__input" required>
+                <span class="form__input-error password-error"></span>
+            </label>
+            <label class="registration__field">
+                <span class="registration__label visually-hidden">Подтверждение пароля</span>
+                <input id="password-confirm" name="password-confirm" type="password" placeholder="Подтверждение пароля*" class="registration__input" required>
+                <span class="form__input-error password-confirm-error"></span>
+            </label>
+            <div class="registration__actions">
+                <label class="registration__field">
+                    <span class="registration__label visually-hidden">День рождения</span>
+                    <input id="birth-day" name="birth-day" type="date" class="registration__input registration__input--date" placeholder="День рождения">
+                    <span class="form__input-error birth-day-error"></span>
+                </label>
+                <button type="submit" class="registration__submit">Зарегистрироваться</button>
             </div>
         </form>
-        <div class="divider">
-            <span>Или войти через</span>
+        <div class="registration__divider">
+            <span class="registration__divider-text">Или войти через</span>
         </div>
-        <div class="buttons">
-            <button class="other-input">
-                <img src="google.svg" class="img">
+        <div class="registration__social">
+            <button class="registration__social-button">
+                <img src="google.svg" class="registration__social-icon" alt="Иконка Google">
                 Google
             </button>
-            <button class="other-input">
-                <img src="icons8-ос-mac.svg" class="img">
+            <button class="registration__social-button">
+                <img src="icons8-ос-mac.svg" class="registration__social-icon" alt="Иконка Apple">
                 Apple
             </button>
         </div>
     </div>
 
 </div>
-
+<script src="./script.js"></script>
 </body>
 </html>
