@@ -15,8 +15,12 @@
 </head>
 <body class="page">
 <div class="page__wrapper">
-    <div class="page__image-wrapper">
-        <img src="desert.jpg" class="page__image" alt="Пустыня">
+    <div class="slider">
+        <button class="slider__prev">←</button>
+        <div class="page__image-wrapper">
+            <img src="desert.jpg" class="page__image" alt="Пустыня">
+        </div>
+        <button class="slider__next">→</button>
     </div>
     <div class="registration">
         <h1 class="registration__title">Создайте аккаунт</h1>
@@ -56,7 +60,7 @@
                     <input id="birth-day" name="birth-day" type="date" class="registration__input registration__input--date" placeholder="День рождения">
                     <span class="form__input-error birth-day-error"></span>
                 </label>
-                <button type="submit" class="registration__submit">Зарегистрироваться</button>
+                <button type="submit" class="registration__submit">Отправить</button>
             </div>
         </form>
         <div class="registration__divider">

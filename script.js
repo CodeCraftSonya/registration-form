@@ -101,3 +101,46 @@ const toggleButtonState = (inputList, buttonElement) => {
 };
 
 enableValidation();
+
+const images = ["desert.jpg", "galaktika2.jpg", "blue-desert2.png"];
+let currentIndex = 0;
+
+const imageElement = document.querySelector(".page__image"); // Элемент с изображением
+const prevButton = document.querySelector(".slider__prev"); // Кнопка назад
+const nextButton = document.querySelector(".slider__next"); // Кнопка вперед
+
+// Функция для обновления изображения
+function updateImage() {
+  imageElement.src = images[currentIndex];
+
+  // Обновляем видимость кнопок в зависимости от индекса
+  if (currentIndex === 0) {
+    prevButton.style.display = "none"; // Скрываем кнопку "назад", если первая картинка
+    nextButton.style.display = "block"; // Показываем кнопку "вперед"
+  } else if (currentIndex === images.length - 1) {
+    nextButton.style.display = "none"; // Скрываем кнопку "вперед", если последняя картинка
+    prevButton.style.display = "block"; // Показываем кнопку "назад"
+  } else {
+    prevButton.style.display = "block"; // Показываем кнопку "назад" для всех картинок
+    nextButton.style.display = "block"; // Показываем кнопку "вперед" для всех картинок
+  }
+}
+
+// Функция для переключения на следующее изображение
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateImage();
+}
+
+// Функция для переключения на предыдущее изображение
+function prevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateImage();
+}
+
+// Слушатели событий для кнопок
+nextButton.addEventListener("click", nextImage);
+prevButton.addEventListener("click", prevImage);
+
+// Инициализируем отображение при загрузке страницы
+updateImage();

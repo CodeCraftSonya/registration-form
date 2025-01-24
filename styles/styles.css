@@ -9,19 +9,21 @@
 
 .page__wrapper {
   display: flex;
-  gap: 45px;
+  gap: 5%;
   background-color: #2b2738;
   padding-inline-start: 15px;
   padding-inline-end: 45px;
   padding-block: 15px;
   border-radius: 15px;
-  height: 75%;
-  width: 60%;
+  max-height: 690px;
+  width: clamp(21rem, 9.3803rem + 49.5775vw, 54rem);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .page__image-wrapper {
-  width: 50%;
+  width: 100%;
+  height: 100%;
+  height: 660px;
 }
 
 .page__image {
@@ -31,21 +33,50 @@
   object-fit: cover;
   object-position: bottom;
   border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.slider {
+  position: relative;
+  width: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slider__prev,
+.slider__next {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.slider__prev {
+  left: 10px;
+}
+
+.slider__next {
+  right: 10px;
 }
 
 .registration {
   width: 50%;
-  padding-block: 70px;
+  padding-block: 45px;
 }
 
 .registration__title {
   margin-bottom: 20px;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
   letter-spacing: 0.1rem;
 }
 
 .registration__text {
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 }
 
 .registration__link {
@@ -170,4 +201,23 @@
 .registration__social-icon {
   width: 25px;
   height: 25px;
+}
+
+@media (max-width: 1023px) {
+  .page__wrapper {
+    gap: 0;
+    padding-inline: 5%;
+  }
+
+  .slider {
+    display: none;
+  }
+
+  .page__image-wrapper {
+    width: 0;
+  }
+
+  .registration {
+    width: 100%;
+  }
 }
