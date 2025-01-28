@@ -16,6 +16,7 @@
 <body class="page">
 <div class="page__wrapper">
     <div class="slider">
+        <button class="slider__back">Вернуться на сайт</button>
         <button class="slider__prev">←</button>
         <div class="page__image-wrapper">
             <img src="desert.jpg" class="page__image" alt="Пустыня">
@@ -26,6 +27,11 @@
         <h1 class="registration__title">Создайте аккаунт</h1>
         <p class="registration__text">Уже есть аккаунт? <a class="registration__link" href="">Войти</a></p>
         <form class="registration__form" action="/submit" method="post" name="registration" novalidate>
+            <label class="registration__field">
+                <input id="checkbox" name="checkbox" type="checkbox" class="registration__input" required>
+                <span class="registration__label">Я согласен(на) с <a href="/terms" target="_blank">условиями использования</a> и <a href="/privacy-policy" target="_blank">политикой конфиденциальности</a>.</span>
+                <span class="form__input-error checkbox-error"></span>
+            </label>
             <fieldset class="registration__fieldset">
                 <label class="registration__field">
                     <span class="registration__label visually-hidden">Имя</span>
@@ -57,7 +63,7 @@
             <div class="registration__actions">
                 <label class="registration__field">
                     <span class="registration__label visually-hidden">День рождения</span>
-                    <input id="birth-day" name="birth-day" type="date" class="registration__input registration__input--date" placeholder="День рождения">
+                    <input id="birth-day" name="birth-day" type="date" min="1990-01-01"  class="registration__input registration__input--date" placeholder="День рождения" required>
                     <span class="form__input-error birth-day-error"></span>
                 </label>
                 <button type="submit" class="registration__submit">Отправить</button>

@@ -48,12 +48,13 @@
   background: rgba(0, 0, 0, 0.2);
   color: white;
   border: none;
-  padding: 10px;
+  border-radius: 50%;
+  padding-inline: 10px;
+  padding-block: 8px;
   font-size: 20px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
 }
 
 .slider__prev {
@@ -62,6 +63,19 @@
 
 .slider__next {
   right: 10px;
+}
+
+.slider__back {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  transform: translateY(-50%);
+  border-radius: 20px;
 }
 
 .registration {
@@ -95,7 +109,15 @@
 }
 
 .registration__field {
+  position: relative;
   display: block;
+  margin-bottom: 20px;
+}
+
+.registration__field:first-of-type {
+  display: flex;
+  align-items: start;
+  position: relative;
 }
 
 .registration__input {
@@ -104,8 +126,29 @@
   border-radius: 5px;
   padding-inline: 20px;
   padding-block: 15px;
-  margin-bottom: 20px;
   color: #fff;
+}
+
+.registration__input[type="checkbox"] {
+  appearance: none;
+  display: none;
+  position: absolute;
+}
+
+.registration__input[type="checkbox"] + .registration__label::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.registration__input[type="checkbox"]:checked + .registration__label::before {
+  background-image: url("../check.svg");
+  background-size: 16px 16px;
 }
 
 .registration__input::placeholder {
@@ -125,10 +168,25 @@
   margin-bottom: 0;
 }
 
-/*.registration__input--date:focus {*/
-/*  border-color: #007bff;*/
-/*  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);*/
-/*}*/
+.form__input-error_active {
+  display: block;
+  position: absolute;
+  background-color: rgba(255, 84, 91, 0.9);
+  color: white;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  top: 100%;
+  left: 0;
+  transform: translateY(5px); /* Отступ для визуального расстояния */
+  z-index: 10; /* Ошибка всегда поверх других элементов */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form__input_type_error {
+  border: 1px solid rgba(255, 84, 91, 0.9);
+}
 
 .registration__actions {
   display: flex;
@@ -136,6 +194,7 @@
 }
 
 .registration__actions .registration__field {
+  margin-bottom: 0;
   width: 48%;
 }
 
@@ -145,7 +204,6 @@
   font-size: 16px;
   background-color: #6e54b5;
   color: #fff;
-  cursor: pointer;
 }
 
 .button_inactive {
@@ -195,7 +253,6 @@
   background-color: transparent;
   color: #fff;
   border: 1px solid #9389a9;
-  cursor: pointer;
 }
 
 .registration__social-icon {

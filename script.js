@@ -17,6 +17,21 @@ const checkPasswordValidity = (password) => {
   return passwordRegex.test(password);
 };
 
+const checkDateValidity = (date) => {
+  const today = new Date();
+  const birthDate = new Date(date);
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const month = today.getMonth() - birthDate.getMonth();
+  if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  return age >= 18;
+};
+
+const passwordField = document.getElementById("password");
+
 const checkInputValidity = (formElement, inputElement) => {
   if (inputElement.name === "password") {
     if (!checkPasswordValidity(inputElement.value)) {
@@ -24,6 +39,28 @@ const checkInputValidity = (formElement, inputElement) => {
         formElement,
         inputElement,
         "Пароль должен быть не менее 8 символов и содержать только латинские буквы и цифры.",
+      );
+      return;
+    }
+  }
+
+  if (inputElement.name === "password-confirm") {
+    if (inputElement.value !== passwordField.value) {
+      showInputError(
+        formElement,
+        inputElement,
+        "Пароли не совпадают. Убедитесь, что вы ввели их правильно.",
+      );
+      return;
+    }
+  }
+
+  if (inputElement.name === "birth-day") {
+    if (!checkDateValidity(inputElement.value)) {
+      showInputError(
+        formElement,
+        inputElement,
+        "Вы должны быть старше 18 лет для регистрации.",
       );
       return;
     }
@@ -63,6 +100,10 @@ const enableValidation = () => {
       const isValid = inputList.every((inputElement) => {
         if (inputElement.name === "password") {
           return checkPasswordValidity(inputElement.value);
+        } else if (inputElement.name === "password-confirm") {
+          return inputElement.value === passwordField.value;
+        } else if (inputElement.name === "birth-day") {
+          return checkDateValidity(inputElement.value);
         }
         return inputElement.validity.valid;
       });

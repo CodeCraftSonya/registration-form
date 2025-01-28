@@ -28,6 +28,10 @@ a {
   color: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 button,
 input {
   font-family: inherit;
