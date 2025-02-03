@@ -1,0 +1,14 @@
+:root {
+  --main-font: "Inter";
+  --main-font-color: #fff;
+  --background-primary: #676179;
+  --background-secondary: #2b2738;
+  --accent-color: #6e54b5;
+  --secondary-accent-color: #9389a9;
+  --input-bg-color: rgba(255, 255, 255, 0.1);
+  --slider-button-bg-color: rgba(0, 0, 0, 0.2);
+  --box-shadow-color: rgba(0, 0, 0, 0.5);
+  --error-color: rgba(255, 84, 91, 0.9);
+  --button-inactive-bg-color: #d3d3d3;
+  --button-inactive-font-color: #a1a1a1;
+}

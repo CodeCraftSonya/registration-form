@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-        Document
+        Registration form
     </title>
     <link rel="stylesheet" href="./fonts/fonts.css">
     <link rel="stylesheet" href="./styles/variables.css">
@@ -28,7 +28,7 @@
         <p class="registration__text">Уже есть аккаунт? <a class="registration__link" href="">Войти</a></p>
         <form class="registration__form" action="/submit" method="post" name="registration" novalidate>
             <label class="registration__field">
-                <input id="checkbox" name="checkbox" type="checkbox" class="registration__input" required>
+                <input id="checkbox" name="checkbox" type="checkbox" class="registration__input" required tabindex="0">
                 <span class="registration__label">Я согласен(на) с <a href="/terms" target="_blank">условиями использования</a> и <a href="/privacy-policy" target="_blank">политикой конфиденциальности</a>.</span>
                 <span class="form__input-error checkbox-error"></span>
             </label>

@@ -1,7 +1,7 @@
 .page {
-  background-color: #676179;
-  color: #fff;
-  font-family: "Inter", sans-serif;
+  background-color: var(--background-primary);
+  color: var(--main-font-color);
+  font-family: var(--main-font), sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,20 +10,18 @@
 .page__wrapper {
   display: flex;
   gap: 5%;
-  background-color: #2b2738;
+  background-color: var(--background-secondary);
   padding-inline-start: 15px;
   padding-inline-end: 45px;
   padding-block: 15px;
   border-radius: 15px;
-  max-height: 690px;
   width: clamp(21rem, 9.3803rem + 49.5775vw, 54rem);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 20px var(--box-shadow-color);
 }
 
 .page__image-wrapper {
   width: 100%;
   height: 100%;
-  height: 660px;
 }
 
 .page__image {
@@ -45,8 +43,8 @@
 
 .slider__prev,
 .slider__next {
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
+  background: var(--slider-button-bg-color);
+  color: var(--main-font-color);
   border: none;
   border-radius: 50%;
   padding-inline: 10px;
@@ -66,8 +64,8 @@
 }
 
 .slider__back {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: var(--input-bg-color);
+  color: var(--main-font-color);
   border: none;
   padding: 10px;
   font-size: 14px;
@@ -80,7 +78,7 @@
 
 .registration {
   width: 50%;
-  padding-block: 45px;
+  padding-block: 20px;
 }
 
 .registration__title {
@@ -94,7 +92,7 @@
 }
 
 .registration__link {
-  color: #6e54b5;
+  color: var(--accent-color);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -122,17 +120,19 @@
 
 .registration__input {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--input-bg-color);
   border-radius: 5px;
   padding-inline: 20px;
   padding-block: 15px;
-  color: #fff;
+  color: var(--main-font-color);
 }
 
 .registration__input[type="checkbox"] {
   appearance: none;
-  display: none;
   position: absolute;
+  width: 16px;
+  height: 16px;
+  opacity: 0;
 }
 
 .registration__input[type="checkbox"] + .registration__label::before {
@@ -140,10 +140,14 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid #fff;
+  background-color: var(--input-bg-color);
+  border: 1px solid var(--main-font-color);
   border-radius: 5px;
   margin-right: 10px;
+}
+
+.registration__input[type="checkbox"]:focus + .registration__label::before {
+  outline: 2px solid var(--main-font-color);
 }
 
 .registration__input[type="checkbox"]:checked + .registration__label::before {
@@ -152,7 +156,7 @@
 }
 
 .registration__input::placeholder {
-  color: #9389a9;
+  color: var(--secondary-accent-color);
 }
 
 .registration__input--date {
@@ -163,29 +167,29 @@
   border-radius: 5px;
   outline: none;
   transition: border-color 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #9389a9;
+  background-color: var(--input-bg-color);
+  color: var(--secondary-accent-color);
   margin-bottom: 0;
 }
 
 .form__input-error_active {
   display: block;
   position: absolute;
-  background-color: rgba(255, 84, 91, 0.9);
-  color: white;
+  background-color: var(--error-color);
+  color: var(--main-font-color);
   font-size: 12px;
   border-radius: 5px;
   padding: 5px 10px;
   white-space: nowrap;
   top: 100%;
   left: 0;
-  transform: translateY(5px); /* Отступ для визуального расстояния */
-  z-index: 10; /* Ошибка всегда поверх других элементов */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(5px);
+  z-index: 10;
+  box-shadow: 0 2px 6px var(--slider-button-bg-color);
 }
 
 .form__input_type_error {
-  border: 1px solid rgba(255, 84, 91, 0.9);
+  border: 1px solid var(--error-color);
 }
 
 .registration__actions {
@@ -202,13 +206,13 @@
   border-radius: 5px;
   width: 48%;
   font-size: 16px;
-  background-color: #6e54b5;
-  color: #fff;
+  background-color: var(--accent-color);
+  color: var(--main-font-color);
 }
 
 .button_inactive {
-  background-color: #d3d3d3;
-  color: #a1a1a1;
+  background-color: var(--button-inactive-bg-color);
+  color: var(--button-inactive-font-color);
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -226,13 +230,13 @@
   content: "";
   flex: 1;
   height: 1px;
-  background-color: #9389a9;
+  background-color: var(--secondary-accent-color);
   margin: 0 10px;
 }
 
 .registration__divider-text {
   font-size: 14px;
-  color: #9389a9;
+  color: var(--secondary-accent-color);
   padding: 0 10px;
 }
 
@@ -251,8 +255,8 @@
   padding-inline: 20px;
   border-radius: 5px;
   background-color: transparent;
-  color: #fff;
-  border: 1px solid #9389a9;
+  color: var(--main-font-color);
+  border: 1px solid var(--secondary-accent-color);
 }
 
 .registration__social-icon {
